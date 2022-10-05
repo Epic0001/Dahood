@@ -59,13 +59,13 @@ textButton.MouseButton1Click:Connect(function()
 end)
 
 spawn(function()
-	while true and task.wait(0.3) do 
+	while true and task.wait(0.15) do 
 		if (E == true) then 
 			for i,v in pairs(Drops:GetChildren()) do 
 				if (v.Name == "MoneyDrop") and (v.Position - Player.Character.HumanoidRootPart.Position).magnitude <= 12 then 
 					if (A == false) then 
 						A = true
-						repeat 
+						repeat task.wait()
 							for i,z in pairs(Player.Character:GetChildren()) do 
 								if z:IsA("Tool") then 
 									z.Parent = Player.Backpack
@@ -74,7 +74,7 @@ spawn(function()
 							workspace.Camera.CameraType = Enum.CameraType.Scriptable
 							workspace.Camera.CFrame = CFrame.lookAt( (v.Position+Vector3.new(math.random(-0.3, 0.3), 2, math.random(-0.3, 0.3))), v.Position)
 							game:GetService("VirtualInputManager"):SendMouseButtonEvent((workspace.Camera.ViewportSize.X/2), (workspace.Camera.ViewportSize.Y/2), 0, true, game, 1)
-							task.wait(0.3)
+							task.wait(0.15)
 							game:GetService("VirtualInputManager"):SendMouseButtonEvent((workspace.Camera.ViewportSize.X/2), (workspace.Camera.ViewportSize.Y/2), 0, false, game, 1)
 						until (not v) or (v.Parent == nil) or (v.Position - Player.Character.HumanoidRootPart.Position).magnitude > 12
 						A = false
