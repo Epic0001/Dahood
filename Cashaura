@@ -62,7 +62,7 @@ spawn(function()
 	while true and task.wait(0.15) do 
 		if (E == true) then 
 			for i,v in pairs(Drops:GetChildren()) do 
-				if (v.Name == "MoneyDrop") and (v.Position - Player.Character.HumanoidRootPart.Position).magnitude <= 30 then 
+				if (v.Name == "MoneyDrop") and (v.Position - Player.Character.HumanoidRootPart.Position).magnitude <= 20 then 
 					if (A == false) then 
 						A = true
 						repeat task.wait()
@@ -76,7 +76,7 @@ spawn(function()
 							game:GetService("VirtualInputManager"):SendMouseButtonEvent((workspace.Camera.ViewportSize.X/2), (workspace.Camera.ViewportSize.Y/2), 0, true, game, 1)
 							task.wait(0.15)
 							game:GetService("VirtualInputManager"):SendMouseButtonEvent((workspace.Camera.ViewportSize.X/2), (workspace.Camera.ViewportSize.Y/2), 0, false, game, 1)
-						until (not v) or (v.Parent == nil) or (v.Position - Player.Character.HumanoidRootPart.Position).magnitude > 30
+						until (not v) or (v.Parent == nil) or (v.Position - Player.Character.HumanoidRootPart.Position).magnitude > 20
 						A = false
 						workspace.Camera.CameraType = Enum.CameraType.Custom
 						workspace.Camera.CameraSubject = Player.Character.Humanoid
